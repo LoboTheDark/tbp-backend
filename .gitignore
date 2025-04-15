@@ -31,6 +31,11 @@ replay_pid*
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+# KEEP these
+!.mvn/
+!mvnw
+!mvnw.cmd
+
 # OS files
 .DS_Store
 Thumbs.db
