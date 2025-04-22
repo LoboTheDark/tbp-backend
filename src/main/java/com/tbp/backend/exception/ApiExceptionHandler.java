@@ -11,10 +11,4 @@ public class ApiExceptionHandler {
         var body = new ErrorResponse("GAME_NOT_FOUND", ex.getMessage());
         return ResponseEntity.status(404).body(body);
     }
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
-        var body = new ErrorResponse("INTERNAL_ERROR", "Something went wrong");
-        return ResponseEntity.status(500).body(body);
-    }
 }
