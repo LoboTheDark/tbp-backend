@@ -4,7 +4,7 @@
 
 ## Project Structure
 
-The overall project is divided into **three separate repositories** to clearly separate application code from infrastructure:
+The overall project is divided into **four separate repositories** to clearly separate application code from infrastructure:
 
 - **tbp-backend:**  
   Contains the backend application (for example, implemented in Spring Boot, .NET, Python, etc.) along with its REST API, unit tests, Dockerfile, and integration setup.
@@ -14,6 +14,9 @@ The overall project is divided into **three separate repositories** to clearly s
 
 - **tbp-deployment:**  
   Manages all Kubernetes deployment configurations, including YAML manifests, Helm charts, and any deployment scripts. This repository handles infrastructure as code, separate from the application logic.
+
+- **tbp-auth:**  
+  It handles user login, registration, and token issuance using both traditional username/password credentials and external SSO providers (Google, Steam, etc.).
 
 ## Architecture & Approach
 
