@@ -6,12 +6,14 @@ import com.tbp.backend.exception.GameNotFoundException;
 import com.tbp.backend.model.Game;
 import com.tbp.backend.service.GameCommandService;
 import com.tbp.backend.service.GameQueryService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
+@Profile("test")
 public class InMemoryGameService implements GameQueryService, GameCommandService {
     private final Map<String, Game> store = new ConcurrentHashMap<>();
 
@@ -39,5 +41,10 @@ public class InMemoryGameService implements GameQueryService, GameCommandService
         var game  = new Game(id, create.name());
         store.put(id, game);
         return new GameDto(game.getId(), game.getName());
+    }
+
+    @Override
+    public void loadGameListFromSteam(String steamId) {
+        //nothing to do
     }
 }
