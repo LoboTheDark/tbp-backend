@@ -15,9 +15,9 @@ public class GameQueryController {
     private final GameQueryService service;
 
     @Operation(summary = "Show all registered games")
-    @GetMapping("/showAll")
-    public List<GameDto> showAll() {
-        return service.findAll();
+    @GetMapping("/showAll/{steamId}")
+    public List<GameDto> showAll(@PathVariable String steamId) {
+        return service.showAll(steamId);
     }
 
     @Operation(summary = "Show a single game by ID")

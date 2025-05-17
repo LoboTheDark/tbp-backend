@@ -13,4 +13,12 @@ public class EventStoreConfig {
         );
         return EventStoreDBClient.create(settings);
     }
+
+    @Bean
+    public EventStoreDBPersistentSubscriptionsClient eventStoreDBPersistentSubscriptionsClient() {
+        EventStoreDBClientSettings settings = EventStoreDBConnectionString.parseOrThrow(
+                "esdb://localhost:2113?tls=false"
+        );
+        return EventStoreDBPersistentSubscriptionsClient.create(settings);
+    }
 }

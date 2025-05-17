@@ -18,7 +18,7 @@ public class InMemoryGameService implements GameQueryService, GameCommandService
     private final Map<String, Game> store = new ConcurrentHashMap<>();
 
     @Override
-    public List<GameDto> findAll() {
+    public List<GameDto> showAll(String steamId) {
         var list = new ArrayList<GameDto>();
         for (var game : store.values()) {
             list.add(new GameDto(game.getId(), game.getName()));

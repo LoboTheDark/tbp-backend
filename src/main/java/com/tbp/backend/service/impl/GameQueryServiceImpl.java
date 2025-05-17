@@ -12,8 +12,9 @@ import java.util.List;
 @Profile("!test")
 @Slf4j
 public class GameQueryServiceImpl implements GameQueryService {
+
     @Override
-    public List<GameDto> findAll() {
+    public List<GameDto> showAll(String steamId) {
         return List.of();
     }
 

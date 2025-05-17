@@ -1,8 +1,16 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: tbp-backend
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: example
+      authentication-database: admin
+      database: tbp-readmodel
 logging:
   level:
     root: INFO
