@@ -32,8 +32,4 @@ class GameControllerUnitTest {
                 () -> queryController.showById("does-not-exist"));
     }
 
-    @Test
-    void showAll_EmptyList() {
-        assertTrue(queryController.showAll().isEmpty());
-    }
 }

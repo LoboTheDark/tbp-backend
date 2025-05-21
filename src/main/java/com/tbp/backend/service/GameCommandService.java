@@ -5,4 +5,5 @@ import com.tbp.backend.dto.GameDto;
 
 public interface GameCommandService {
     GameDto create(CreateGameDto create);
+    void loadGameListFromSteam(String steamId);
 }

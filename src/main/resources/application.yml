@@ -1,5 +1,23 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: tbp-backend
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: example
+      authentication-database: admin
+      database: tbp-readmodel
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+jwt:
+  secret: VkdTUnliUjlkaFI5WXJPY3BYa2FabjZWT0tsTUhGc1FnQ2RXV3gxWW1aT0lsUTJibGRIa2psTndqQ3h2N3Z0dg== # base64 encoded (mind. 256 byte)
+steam:
+  api-key: 54EF220BF9A9BF849DB4E33FC4B0FDA3
+  api-url: https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/

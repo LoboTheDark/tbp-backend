@@ -3,7 +3,7 @@ import com.tbp.backend.dto.GameDto;
 import java.util.List;
 
 public interface GameQueryService {
-    List<GameDto> findAll();
+    List<GameDto> showAll(String steamId);
     GameDto findById(String id);
 }
 
