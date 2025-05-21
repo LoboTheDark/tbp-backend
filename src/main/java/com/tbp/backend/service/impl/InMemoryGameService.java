@@ -21,7 +21,7 @@ public class InMemoryGameService implements GameQueryService, GameCommandService
     public List<GameDto> showAll(String steamId) {
         var list = new ArrayList<GameDto>();
         for (var game : store.values()) {
-            list.add(new GameDto(game.getId(), game.getName()));
+            list.add(new GameDto(game.getId(), game.getName(), ""));
         }
         return list;
     }
@@ -32,7 +32,7 @@ public class InMemoryGameService implements GameQueryService, GameCommandService
         if (game == null) {
             throw new GameNotFoundException(id);
         }
-        return new GameDto(game.getId(), game.getName());
+        return new GameDto(game.getId(), game.getName(), "");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class InMemoryGameService implements GameQueryService, GameCommandService
         var id = UUID.randomUUID().toString();
         var game  = new Game(id, create.name());
         store.put(id, game);
-        return new GameDto(game.getId(), game.getName());
+        return new GameDto(game.getId(), game.getName(), "");
     }
 
     @Override

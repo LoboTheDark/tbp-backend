@@ -4,6 +4,7 @@ import com.tbp.backend.dto.GameDto;
 import com.tbp.backend.service.GameQueryService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,12 +12,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/games")
 @RequiredArgsConstructor
+@Slf4j
 public class GameQueryController {
     private final GameQueryService service;
 
     @Operation(summary = "Show all registered games")
     @GetMapping("/showAll/{steamId}")
     public List<GameDto> showAll(@PathVariable String steamId) {
+        log.info("Called with steamId {}", steamId);
         return service.showAll(steamId);
     }
 

@@ -65,7 +65,7 @@ public class GamePersistentSubscriber {
                         log.info("Caught event from event db");
                         handleGameSyncEvent(event);
                     }
-                }catch (InterruptedException e) {
+                } catch (InterruptedException e) {
                         log.error("InterruptedException during process event {}", e.getMessage());
                         Thread.currentThread().interrupt();
                 } catch (IOException e) {
